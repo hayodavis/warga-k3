@@ -22,9 +22,9 @@ Sistem Pelaporan K3 Berbasis Web (Serverless) Solusi mudah, murah, dan cepat unt
 
 ## 📸 Galeri Tampilan
 
-![Tampilan Pelapor (HP)](https://github.com/hayodavis/warga-k3/blob/main/screenshoot/Warga%20K3%20-%20Mobile.png {width=40px height=400px})
+![Tampilan Pelapor (HP)](https://github.com/hayodavis/warga-k3/blob/main/screenshoot/Warga%20K3%20-%20Mobile.png width="48")
 
-![Tampilan Dashboard (Admin)](https://github.com/hayodavis/warga-k3/blob/main/screenshoot/Warga%20K3%20-%20Dekstop%20or%20Tablet.png {width=40px height=400px})
+![Tampilan Dashboard (Admin)](https://github.com/hayodavis/warga-k3/blob/main/screenshoot/Warga%20K3%20-%20Dekstop%20or%20Tablet.png width="48")
 
 ## 🛠️ Teknologi
 
