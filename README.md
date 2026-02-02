@@ -1,143 +1,111 @@
-Warga K3 - Sistem Pelaporan Bahaya 👷‍♂️⚠️
+👷‍♂️ Warga K3 - Sistem Pelaporan Bahaya
 
-Warga K3 adalah aplikasi berbasis web sederhana untuk melaporkan potensi bahaya K3 (Kesehatan dan Keselamatan Kerja) di lingkungan kerja atau publik. Aplikasi ini dirancang agar mudah digunakan (user-friendly), responsif di HP (mobile-first), dan menggunakan Google Sheets sebagai database gratis tanpa server berbayar.
+Sistem Pelaporan K3 Berbasis Web (Serverless) Solusi mudah, murah, dan cepat untuk melaporkan potensi bahaya di lingkungan kerja. Tanpa biaya server bulanan!
 
-🌟 Fitur Utama
+(Ganti gambar di atas dengan screenshot Dashboard Admin Anda. Buat folder bernama "screenshots" di repo Anda)
 
-📱 Mode User (Pelapor)
+✨ Fitur Utama
 
-Lapor Bahaya Cepat: Form pelaporan sederhana (Kategori, Lokasi, Deskripsi, Foto).
+📱 Mode User (Mobile First)
 
-Upload Bukti Foto: Mendukung upload foto yang otomatis tersimpan ke Google Drive.
+Lapor Cepat: Form intuitif (Lokasi, Kategori, Foto) < 30 detik.
 
-Feed Real-time: Melihat laporan terkini dari warga lain.
+Smart Upload: Foto otomatis terupload ke Google Drive.
 
-Counter Laporan: Statistik total partisipasi warga.
+Feed Real-time: Transparansi laporan antar warga.
 
-🔒 Mode Admin
+Statistik Warga: Counter partisipasi pelaporan.
 
-Dashboard Monitoring: Grafik statistik dan ringkasan status (Open, In Progress, Done).
+🔒 Mode Admin (Dashboard)
 
-Manajemen Laporan: Ubah status laporan dan hapus laporan tidak valid.
+Monitoring: Grafik & Tabel status laporan (Open, In Progress, Done).
 
-Akses Aman: Login menggunakan password yang disimpan di Google Sheet.
+Manajemen: Update status & hapus laporan sampah.
 
-AI Insight: Analisa sederhana area/kategori yang paling sering bermasalah.
+Bukti Visual: Tombol langsung menuju bukti foto.
+
+Secure: Login simpel via Google Sheet database.
+
+📸 Galeri Tampilan
+
+Tampilan Pelapor (HP)
+
+Tampilan Dashboard (Admin)
+
+Formulir Laporan
+
+Manajemen Data
 
 🛠️ Teknologi
 
-Frontend: HTML5, Tailwind CSS (CDN), Vanilla JavaScript.
+Frontend: HTML5, Tailwind CSS, Vanilla JS.
 
 Backend: Google Apps Script (GAS).
 
-Database: Google Spreadsheets.
+Database: Google Spreadsheet.
 
-Storage: Google Drive (untuk foto).
+Storage: Google Drive.
 
 🚀 Cara Instalasi (Cloning)
 
-Ikuti langkah-langkah ini untuk menjalankan aplikasi di tempat Anda sendiri.
+Ikuti 4 langkah mudah ini untuk memiliki sistem K3 sendiri.
 
-Langkah 1: Persiapan Google Sheet (Database)
+1️⃣ Persiapan Database (Google Sheet)
 
-Buka Google Sheets dan buat Spreadsheet baru bernama Database Warga K3.
+Buat Spreadsheet baru di Google Sheets.
 
-Buat 2 Tab (Sheet) dengan nama persis berikut:
+Buat 2 Tab dengan nama persis: Reports dan Settings.
 
-Tab 1: Beri nama Reports
-
-Tab 2: Beri nama Settings
-
-Setup Header (Judul Kolom):
-
-Di Tab Reports, isi baris pertama (A1-H1) dengan:
-id | category | location | description | status | userId | timestamp | imageUrl
-
-Di Tab Settings, isi baris pertama (A1-B1) dengan:
-key | value
-
-Setup Password Admin:
-
-Di Tab Settings, isi baris kedua (A2-B2):
-admin_password | rahasia123 (Ganti rahasia123 dengan password admin Anda).
-
-Langkah 2: Setup Backend (Google Apps Script)
-
-Di Google Sheet tadi, klik menu Extensions > Apps Script.
-
-Hapus semua kode yang ada di file Code.gs.
-
-Copy & Paste kode backend lengkap (lihat file backend-script.js atau kode yang disediakan terpisah).
-
-Simpan project (Ctrl+S).
-
-Penting: Lakukan otorisasi izin Drive:
-
-Buat fungsi sementara function test(){ DriveApp.createFile('tes.txt','tes'); }
-
-Jalankan fungsi test tersebut lalu setujui semua izin (Allow).
-
-Pastikan file tes.txt muncul di Drive Anda (ini tandanya izin tulis sukses).
-
-Langkah 3: Deploy Web App
-
-Di editor Apps Script, klik tombol biru Deploy > New Deployment.
-
-Pilih tipe: Web App.
-
-Konfigurasi:
-
-Description: Versi 1
-
-Execute as: Me (email Anda).
-
-Who has access: Anyone (Siapa saja).
-
-Klik Deploy.
-
-Salin Web App URL yang muncul (berawalan https://script.google.com/macros/s/...).
-
-Langkah 4: Setup Frontend
-
-Clone repository ini atau download file index.html.
-
-Buka file index.html menggunakan text editor (VS Code, Notepad++, dll).
-
-Cari variabel const SCRIPT_URL di bagian bawah script (sekitar baris 580).
-
-Ganti URL di dalam tanda kutip dengan Web App URL milik Anda dari Langkah 3.
-
-// GANTI URL INI
-const SCRIPT_URL = '[https://script.google.com/macros/s/AKfycb.../exec](https://script.google.com/macros/s/AKfycb.../exec)';
-
-Simpan file.
-
-Selesai! 🎉
-
-Buka file index.html di browser Anda. Aplikasi siap digunakan!
-
-📸 Struktur Data Google Sheet
+Isi Header (Baris 1) sebagai berikut:
 
 Tab: Reports
 | id | category | location | description | status | userId | timestamp | imageUrl |
-|----|----------|----------|-------------|--------|--------|-----------|----------|
-| uuid | Fisik | Lobby | Lantai licin | Open | user_1 | ISO Date | Link Foto |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| (biarkan kosong) | ... | ... | ... | ... | ... | ... | ... |
 
 Tab: Settings
 | key | value |
-|-----|-------|
-| admin_password | passwordAnda |
+| :--- | :--- |
+| admin_password | rahasia123 |
+
+(Ganti rahasia123 dengan password admin yang Anda inginkan)
+
+2️⃣ Setup Backend
+
+Di Google Sheet, klik Extensions > Apps Script.
+
+Paste kode backend-script.js ke Code.gs.
+
+Simpan dan Jalankan fungsi test untuk memberikan izin akses Drive & Sheet (Authorization).
+
+3️⃣ Deploy Web App
+
+Klik tombol biru Deploy > New Deployment.
+
+Pilih type: Web App.
+
+Konfigurasi:
+
+Execute as: Me (Email Anda).
+
+Who has access: Anyone (Siapa saja).
+
+Klik Deploy dan Copy URL yang muncul.
+
+4️⃣ Setup Frontend
+
+Buka file index.html di text editor.
+
+Cari baris kode berikut (sekitar baris 580):
+
+const SCRIPT_URL = 'PASTE_URL_WEB_APP_ANDA_DISINI';
+
+Paste URL dari langkah 3 ke situ.
+
+Buka index.html di browser. Selesai! 🎉
 
 🤝 Kontribusi
 
-Aplikasi ini bersifat Open Source. Silakan lakukan Fork dan Pull Request jika ingin menambahkan fitur seperti:
+Project ini Open Source (MIT License). Silakan Fork dan kembangkan fitur baru seperti notifikasi WA atau Export PDF!
 
-Notifikasi Email/WhatsApp.
-
-Export Laporan ke PDF.
-
-Peta Lokasi.
-
-📄 Lisensi
-
-MIT License - Bebas digunakan dan dimodifikasi untuk keperluan edukasi maupun implementasi nyata.
+Dibuat dengan ❤️ untuk keselamatan kerja.
